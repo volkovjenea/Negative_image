@@ -1,0 +1,17 @@
+form.admin_settings_form:
+  path: '/admin/config/custom_block/adminsettings'
+  defaults:
+    _form: '\Drupal\custom_block\Form\AdminForm'
+    _title: 'AdminForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+custom_block.bookmark:
+  path: '/bookmark/{node}/{uid}'
+  defaults:
+    _controller: '\Drupal\custom_block\Controller\CustomController::content'
+    _title: 'Custom block controller'
+  requirements:
+    _permission: 'access content'

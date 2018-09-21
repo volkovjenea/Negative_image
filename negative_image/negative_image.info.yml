@@ -1,0 +1,7 @@
+name: negative_image
+description: 'Allows you to change original photo to negative '
+type: module
+core: 8.x
+dependencies:
+  - image
+  - imagick

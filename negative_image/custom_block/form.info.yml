@@ -1,0 +1,5 @@
+name: Admin form Custom Block
+type: module
+description: Add admin form on a block.
+package: IPGroup
+core: '8.x'

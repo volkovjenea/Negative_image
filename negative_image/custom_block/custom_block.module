@@ -1,0 +1,36 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\Core\Render\Element;
+
+
+/**
+ * Implements hook_theme() to add the template definition.
+ **/
+function custom_block_theme($existing, $type, $theme, $path) {
+
+  $theme=array();
+
+  $theme['custom_template'] = [
+      'variables' => [
+        'title' => NULL,
+        'body'=>NULL,
+        'image'=>NULL
+      ],
+    ];
+
+
+  return $theme;
+}
+
+function custom_block_node_view_alter(array &$build,Drupal\Core\Entity\EntityInterface $entity,\Drupal\Core\Entity\Display\EntityViewDisplayInterface $display) {
+  $user = \Drupal::currentUser()->id();
+
+  if (!empty($build['field_bookmark'])) {
+    foreach (Element::children($build['field_bookmark']) as $key) {
+      $url = Url::fromUserInput("/bookmark/" . $entity->id() . '/'. $user);
+      $build['field_bookmark'][$key]['#url'] = $url;
+      $build['field_bookmark'][$key]['#title'] = t('Add to bookmark');
+    }
+  }
+}

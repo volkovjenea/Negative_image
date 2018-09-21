@@ -1,0 +1,6 @@
+form.admin_settings_form:
+  title: 'Admin form'
+  route_name: form.admin_settings_form
+  description: 'Welcome message admin'
+  parent: system.admin_config_system
+  weight: 99

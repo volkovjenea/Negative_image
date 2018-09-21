@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - imagick
+name: invert_image
+label: Invert_Image
+effects:
+  14c75360-c0e9-4e41-bbd4-e2c66b6b4cae:
+    uuid: 14c75360-c0e9-4e41-bbd4-e2c66b6b4cae
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: 600
+      upscale: false
+  273b3905-9ae9-4ca9-b367-e0c5ee3a6852:
+    uuid: 273b3905-9ae9-4ca9-b367-e0c5ee3a6852
+    id: image_inverse
+    weight: 2
+    data: {  }
